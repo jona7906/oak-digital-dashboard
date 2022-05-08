@@ -9,7 +9,7 @@ function fetchData(props) {
       "x-apikey": "3oYKhp8_9NHeNiXEynYDKZcYI39waZKjMYqsZOXQ6BJg9SElwQNWQzoNlMgEJAN__QYnm0Q",
       "request-mode": "no-cors",
       "cache-control": "no-cache",
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "https://amazing-pothos-67d646.netlify.app",
     },
   })
     .then((res) => res.json())

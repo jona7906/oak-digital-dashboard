@@ -1,6 +1,6 @@
 function fetchData(props) {
-  const tableURL = "https://api.pingdom.com/";
-  const tableAPI = "3oYKhp8_9NHeNiXEynYDKZcYI39waZKjMYqsZOXQ6BJg9SElwQNWQzoNlMgEJAN__QYnm0Q";
+  // const tableURL = "https://api.pingdom.com/";
+  // const tableAPI = "3oYKhp8_9NHeNiXEynYDKZcYI39waZKjMYqsZOXQ6BJg9SElwQNWQzoNlMgEJAN__QYnm0Q";
 
   /*  let serverData;
   const url = "https://api.pingdom.com/api/3.1/checks/";
@@ -26,17 +26,15 @@ function fetchData(props) {
   myHeaders.append("Authorization", "Bearer 3oYKhp8_9NHeNiXEynYDKZcYI39waZKjMYqsZOXQ6BJg9SElwQNWQzoNlMgEJAN__QYnm0Q");
 
   var requestOptions = {
-    mode: "no-cors",
     method: "GET",
     headers: myHeaders,
     redirect: "follow",
   };
 
-  fetch("https://api.pingdom.com/api/3.1/checks/", requestOptions)
-    .then((response) => response.text())
+  fetch("https://nameless-island-77647.herokuapp.com/https://api.pingdom.com/api/3.1/checks/", requestOptions)
+    .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
-
   /* 
   fetch("https://api.pingdom.com/api/3.1/checks", {
     method: "get",

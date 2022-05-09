@@ -2,7 +2,7 @@
 
 function Header() {
  
-console.log(event)
+/* console.log(event) */
   return (
    <header>
        <nav></nav>

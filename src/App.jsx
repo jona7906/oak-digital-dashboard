@@ -12,16 +12,24 @@ function App() {
 
   
 
-  const tableURL = "https://api.pingdom.com/";
-  const tableAPI = "3oYKhp8_9NHeNiXEynYDKZcYI39waZKjMYqsZOXQ6BJg9SElwQNWQzoNlMgEJAN__QYnm0Q";
   // let tablenr;
 
-console.log(fulldata)
-
-  useEffect(() => {setData(fetchData(tableAPI, tableURL));
-  });
-
-  console.log(fulldata)
+/* console.log(fulldata) */
+ 
+  useEffect(() => {setData(fetchData());
+  }); 
+  
+ /*  let serverData = []; */
+ 
+ /*  fetch(`http://localhost:3000/src/fetch.php`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    }, })
+    .then((response) =>  response.json())
+    .then((data) =>  console.log(data)); */
+  
+  /* console.log(serverData) */
 
  
 

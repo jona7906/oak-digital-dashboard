@@ -1,14 +1,12 @@
 import Api from "../privates/Api";
 
-function fetchData(props) {
+function fetchData() {
   const api = Api();
-  console.log(api.apiAuth);
   let serverData = [];
-  var myHeaders = new Headers();
-
+  let myHeaders = new Headers();
   myHeaders.append("Authorization", api.apiAuth + " " + api.apiToken);
 
-  var requestOptions = {
+  let requestOptions = {
     method: "GET",
     headers: myHeaders,
     redirect: "follow",

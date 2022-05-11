@@ -1,14 +1,26 @@
+@use "/src/styles/variables" as v;
+
 * {
     box-sizing: border-box;
-    max-width: 100%
+    max-width: 100%;
 }
 
+body {
+    background-color: v.$white;
+    .server-container {
+        .server {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            border: 1px v.$blue solid;
+            padding-left: 0.5vw;
+            border-left: none;
+            border-right: none;
+            font-size: 0.5vw;
+            .server-name {
+            }
+            .server-hostname {
 
-.server {
-    border: 1px #204561 solid;
-    display: flex;
-    font-size: 1rem;
-    .server-name {
-        
+            }
+        }
     }
 }

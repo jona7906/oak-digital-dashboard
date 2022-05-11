@@ -1,11 +1,17 @@
 import LoadingScreen from "../modules/LoadingScreen";
-
+import StatusIcon from "../modules/StatusIcon";
 function Dashboard(props) {
  
    if(!props.checksData.checks){
     console.log("no props");
     return <div><LoadingScreen></LoadingScreen></div>
  }
+
+/*  function statusIcon(){
+ if(server.status === "up"){
+  console.log("IM UP");
+ }
+} */
   
 
  /*  const HtmlBody = () => {
@@ -28,18 +34,20 @@ function Dashboard(props) {
 
    return (
         
-    <div> <h1>DASHBOARD</h1>
-
-      {props.checksData.checks.map((server)=>(
+    <div> <h2>DASHBOARD</h2>
+        <div className="server-container">
+        {props.checksData.checks.map((server)=>(
        <div className="server">
-         <h1 className="server-name">{server.name}</h1>
+        <h2 className="server-status">status: {<StatusIcon status={server.status}/>}</h2>
+        <h2 className="server-name">{server.name}</h2>
         <h2 className="server-hostname">host: {server.hostname}</h2>
-        <h2 className="server-status">status: {server.status}</h2>
         <h2 className="server-type">type: {server.type}</h2>
         <h2 className="server-lastresponsetime">res/time: {server.lastresponsetime}</h2>
         <h2 className="server-resolution">resolution: {server.resolution}</h2>
        </div>
        ))  } 
+        </div>
+
     </div>
   )
     }

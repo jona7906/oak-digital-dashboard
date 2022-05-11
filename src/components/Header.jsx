@@ -1,4 +1,5 @@
-import DropdownMenu from './Dropdown.jsx'
+import DropdownType from './DropdownType.jsx'
+import DropdownTime from './DropdownTime.jsx'
  
 
 function Header() {
@@ -9,8 +10,8 @@ function Header() {
        <nav>
          <h1>OAK DIGITAL</h1>
          <div className="dropdownmenu">
-          <DropdownMenu/>
-          <DropdownMenu/>
+          <DropdownType/>
+          <DropdownTime/>
          </div>
        </nav>
    </header>

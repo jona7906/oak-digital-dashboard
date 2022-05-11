@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import "./styles/App.scss"
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
+import Login from './components/Login';
 /* import Dashboard from './components/Dashboard'; */
 
 // import fetchData from './modules/fetchData';
@@ -56,10 +57,7 @@ function App() {
     <div className="App">
       <Header/>
       <Dashboard checksData={fulldata}/>
-      
-      <h1>HELLO MONKEYYYSSS!!</h1>
-     
-      
+      {/* <Login/> */}
     </div>
   )
 }

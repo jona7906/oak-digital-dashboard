@@ -1,20 +1,22 @@
-function PostResData(props) {
+function PostResData(servername, testtime, restime) {
   
     console.log("UPLOADIING RES DATA!!!")
-let resData = {
-    server: props.server,
-    timestamp: props.resTimestamp,
-    restime: props.resTime
+
+   let resData = {
+    server: servername,
+    timestamp: testtime,
+    restime: restime
 } 
 
     fetch("https://oakdigital-4081.restdb.io/rest/responstime", {
-      method: "post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": "61b71e3fa3fedd557f8e0abd",
+        "x-apikey": "73ecc7c2e5178e71e65aa4978e9ddbe8647dd",
         "cache-control": "no-cache",
+        
       },
-      body: resData,
+      body: resData,json: true 
     })
       .then((res) => res.json())
       .then((data) => console.log(`${data}`));

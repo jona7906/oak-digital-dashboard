@@ -31,13 +31,15 @@ function App() {
     };
   
     useEffect(() => {
-      const interval = setInterval(() => {
+      const updateData = () => {
         console.log("This will run every second!");
         fetch(api.proxy + api.apiHost, requestOptions)
           .then((response) => response.json())
           .then((data) => setData(data))
           .catch((error) => console.log("error", error));
-      }, 10000);
+      }
+      updateData()
+      const interval = setInterval(updateData, 10000);
       return () => clearInterval(interval);
     }, []);
 

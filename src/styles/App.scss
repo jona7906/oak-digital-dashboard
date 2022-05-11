@@ -6,21 +6,33 @@
 }
 
 body {
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
     background-color: v.$white;
+    h2 {
+        font-family: v.$bold;
+    }
     .server-container {
+        border-top:  1px v.$blue solid;
         .server {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
+            align-items: center;
             border: 1px v.$blue solid;
-            padding-left: 0.5vw;
             border-left: none;
             border-right: none;
-            font-size: 0.5vw;
-            .server-name {
-            }
-            .server-hostname {
-
+            border-top: none;
+            font-family: v.$bold;
+            font-size: 0.7vw;
+            .server-status {
+                height: 50px;
+                width: 50px;
+                background-size: auto;
             }
         }
+
     }
 }

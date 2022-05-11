@@ -6,11 +6,11 @@ import { useState, useEffect, useRef } from 'react';
 function Dashboard(props) {
  
    if(!props.checksData.checks){
-    console.log("no props");
+    // console.log("no props");
     return <div><LoadingScreen></LoadingScreen></div>
  }
 
-console.log(props.checksData.checks)
+// console.log(props.checksData.checks)
 {/* <PostResData server={check.serverName} timestamp={check.lasttesttime} restime={check.lastresponsetime}/>
  */}
 

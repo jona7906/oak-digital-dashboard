@@ -4,8 +4,8 @@ function LoadingScreen() {
   /* console.log(event) */
   return (
     <section id="loadingSection">
-      <div class="contentWrapper">
-        <div class="loading">
+      <div className="contentWrapper">
+        <div className="loading">
           <span><b>O</b></span>
           <span><b>A</b></span>
           <span><b>K</b></span>

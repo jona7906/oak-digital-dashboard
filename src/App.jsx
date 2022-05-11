@@ -6,34 +6,14 @@ import Header from './components/Header';
 import Login from './components/Login';
 /* import Dashboard from './components/Dashboard'; */
 
-// import fetchData from './modules/fetchData';
- import Api from "./privates/Api";
-
 
 function App() {
-
-
-
-  //Tilføj state fulldata, ændre state med setData
-  //Add state "fulldata", change state with "setData"
-  const [fulldata, setData] = useState([]);
- 
-
-    const api = Api();
- 
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", api.apiAuth + " " + api.apiToken);
-  
-    let requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-  
+  //Tilføj state fullData, ændre state med setData
+  //Add state "fullData", change state with "setData"
+  const [fullData, setData] = useState([]);
     useEffect(() => {
       const updateData = () => {
-        console.log("This will run every second!");
-        fetch(api.proxy + api.apiHost, requestOptions)
+        fetch(import.meta.env.VITE_API_URL)
           .then((response) => response.json())
           .then((data) => setData(data))
           .catch((error) => console.log("error", error));
@@ -50,15 +30,15 @@ function App() {
     //assign the ref's current value to the count Hook
     prevCountRef.current;
     console.log(prevCountRef);
-  }, [fulldata]);
+  }, [fullData]);
      */
- console.log("counts: ", fulldata.counts) 
+//  console.log("counts: ", fullData.counts) 
     
 
   return (
     <div className="App">
       <Header/>
-      <Dashboard checksData={fulldata}/>
+      <Dashboard checksData={fullData}/>
       {/* <Login/> */}
     </div>
   )

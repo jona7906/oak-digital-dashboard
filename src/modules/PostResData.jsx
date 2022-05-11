@@ -1,6 +1,6 @@
 function PostResData(servername, testtime, restime) {
   
-    console.log("UPLOADIING RES DATA!!!")
+    // console.log("UPLOADIING RES DATA!!!")
 
    let resData = {
     server: servername,

@@ -14,6 +14,16 @@ body {
         gap: 1vw;
         animation: fadeUp 2s 1 both;
         padding-top: 2vw;
+        .dropdownmenu select{
+            border-radius: 0;
+            border: 0;
+            background-color: rgba(48, 58, 114, 0.201);
+            box-shadow: rgba(4, 0, 255, 0.37) 0px 0px 0px 0px;
+            text-align: center;
+            margin: 0.5vw;
+            width: 15vw;
+            height: 3vw;
+        }
         @keyframes fadeUp {
             from{
                 opacity: 0;
@@ -24,6 +34,10 @@ body {
                 transform: translateY(0);
             }
         }
+    }
+
+    .dashboard-container {
+        
     }
     .server-container {
         margin-top: 5vw;
@@ -75,4 +89,9 @@ body {
     to {
       opacity: 1;
     }
+  }
+
+  .sortby {
+    transform: scale(1.05);
+    background-color: #4e7a7b80;
   }

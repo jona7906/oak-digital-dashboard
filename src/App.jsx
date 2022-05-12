@@ -12,14 +12,13 @@ function App() {
   //Add state "fullData", change state with "setData"
   const [fullData, setData] = useState([]);
     useEffect(() => {
-      const updateData = () => {
-        fetch(import.meta.env.VITE_API_URL)
-          .then((response) => response.json())
-          .then((data) => setData(data))
-          .catch((error) => console.log("error", error));
+      const updateData = async () => {
+        const response = await fetch (import.meta.env.VITE_API_URL)
+        const data = await response.json()
+        setData(data)
       }
       updateData()
-      const interval = setInterval(updateData, 10000);
+      const interval = setInterval(updateData, 5000);
       return () => clearInterval(interval);
     }, []);
 

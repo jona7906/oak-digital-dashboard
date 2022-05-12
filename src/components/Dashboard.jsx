@@ -62,7 +62,7 @@ function handleClick() {
         <h2 className="server-name">{server.name}</h2>
         <h2 className="server-hostname">host: {server.hostname}</h2>
         <h2 className="server-type">type: {server.type}</h2>
-        <h2 className="server-lastresponsetime">res/time: {server.lastresponsetime} ms</h2>
+        <h2 className="server-lastresponsetime">response time: {server.lastresponsetime} ms</h2>
         <h2 className="server-resolution">resolution: {server.resolution}</h2>
         <h2 className="server-resolution">resolution: {server.created}</h2>
        </div>

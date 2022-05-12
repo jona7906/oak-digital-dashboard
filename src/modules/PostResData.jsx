@@ -12,7 +12,7 @@ function PostResData(servername, testtime, restime) {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": "73ecc7c2e5178e71e65aa4978e9ddbe8647dd",
+        "x-apikey": "",
         "cache-control": "no-cache",
         
       },

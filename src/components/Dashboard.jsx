@@ -47,24 +47,33 @@ const uploadResData = () => props.checksData.checks.map((check)=>(
    } */
 
    // for each loop? eventlistener? for hver server name hover funktion: fold ud så host bliver synligt og klikbart
-function handleClick() {
+/* function handleClick() {
   console
-}
+} */
 
    return (
         
     <div> 
         {/* <h2>DASHBOARD</h2> */}
         <div className="server-container">
+        <div className="status-headlines">
+          <h2 className="status">STATUS</h2>
+          <h2 className="name">SITE NAME</h2>
+          <h2 className="host">HOST</h2>
+          <h2 className="type">TYPE</h2>
+          <h2 className="response">RESPONSE TIME</h2>
+          <h2 className="resolution">RESOLUTION</h2>
+          <h2 className="created">CREATED</h2>
+        </div>
         {props.checksData.checks.map((server)=>(
         <div className="server">
         <h2 className="server-status">{<StatusIcon status={server.status}/>}</h2>
         <h2 className="server-name">{server.name}</h2>
-        <h2 className="server-hostname">host: {server.hostname}</h2>
-        <h2 className="server-type">type: {server.type}</h2>
-        <h2 className="server-lastresponsetime">response time: {server.lastresponsetime} ms</h2>
-        <h2 className="server-resolution">resolution: {server.resolution}</h2>
-        <h2 className="server-resolution">resolution: {server.created}</h2>
+        <h2 className="server-hostname">{server.hostname}</h2>
+        <h2 className="server-type">{server.type}</h2>
+        <h2 className="server-lastresponsetime">{server.lastresponsetime} ms</h2>
+        <h2 className="server-resolution">{server.resolution}</h2>
+        <h2 className="server-resolution">{server.created}</h2>
        </div>
        ))  } 
         </div>

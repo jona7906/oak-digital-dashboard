@@ -8,11 +8,11 @@ function PostResData(servername, testtime, restime) {
     restime: restime
 } 
 
-    fetch("https://oakdigital-4081.restdb.io/rest/responstime", {
+    fetch("https://oakdigital-4081.restdb.io/rest/responstime/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": "",
+        "x-api-key": "627bd9e1e8128861fcf3d227",
         "cache-control": "no-cache",
         
       },

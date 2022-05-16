@@ -9,7 +9,7 @@ function StatusIcon(props) {
       } else if(props.status === "paused"){
         return "../images/pause.svg"
       } else{
-        return "../server-down-icon.svg"
+        return "../images/server-down-icon.svg"
           }
         }
 

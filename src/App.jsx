@@ -1,9 +1,12 @@
-
+import dataHandler from "./modules/dataHandler"
 import { useState, useEffect, useRef } from 'react';
 import "./styles/App.scss"
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Login from './components/Login';
+import Calendar from './components/Calendar';
+
+
 /* import Dashboard from './components/Dashboard'; */
 
 
@@ -22,7 +25,14 @@ function App() {
       return () => clearInterval(interval);
     }, []);
 
-    
+
+    let checksHandled = [];
+    if(fullData.checks){
+      let serverChecks = [...fullData.checks];
+
+      checksHandled = [...dataHandler(serverChecks)];
+     /*  console.log("serverHandled", checksHandled); */
+  }
 /* //the useRef Hook allows you to persist data between renders
   const prevCountRef = useRef();
   useEffect(() => {
@@ -37,7 +47,8 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Dashboard checksData={fullData}/>
+      <Dashboard checksData={checksHandled}/>
+      {/* <Calendar/> */}
       {/* <Login/> */}
     </div>
   )

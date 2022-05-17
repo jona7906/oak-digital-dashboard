@@ -1,0 +1,148 @@
+@use "/src/styles/variables" as v;
+/* @import "~ag-grid-community/src/styles/ag-grid.scss";*/
+
+ 
+.ag-theme-alpine {
+    --ag-foreground-color: black;
+    --ag-header-background-color: yellow;
+    --ag-header-background-color:white;
+    --ag-odd-row-background-color: green;
+    --ag-header-cell-moving-background-color: ag-derived(header-cell-hover-background-color);
+    --value-change-value-highlight-background-color: rgba(#16A085, 0.5),
+   /*  @include ag-theme-alpine((
+        // use theme parameters where possible
+        alpine-active-color: deeppink
+    )); */
+
+    .ag-header {
+        // or write CSS selectors to make customisations beyond what the parameters support
+       /*  font-style: italic;
+        width: fit-content; */
+        
+
+    }.ag-header-cell-label{
+
+    }
+}
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    background-color: v.$white;
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1vw;
+        animation: fadeUp 2s 1 both;
+        padding-top: 2vw;
+        .dropdownmenu select{
+            border-radius: 0;
+            border: 0;
+            background-color: rgba(48, 58, 114, 0.201);
+            box-shadow: rgba(4, 0, 255, 0.37) 0px 0px 0px 0px;
+            text-align: center;
+            margin: 0.5vw;
+            width: 15vw;
+            height: 3vw;
+        }
+        @keyframes fadeUp {
+            from{
+                opacity: 0;
+                transform: translateY(-2vw);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .dashboard-container {
+        width: 90vw;
+        height: 60vw;
+        // display: flex;
+        // justify-content: center;
+    }
+    .ag-theme-alpine{
+        width: 100%;
+        height: 100%;
+         .statusIcon {
+            height: 100%;
+            
+            padding: 0.5vw;
+            img{
+            
+           height: 100%;
+            }}
+            .rows-style{
+                background: green;
+            }
+    }
+    .server-container {
+        margin-top: 5vw;
+        .status-headlines{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            align-items: center;
+            font-family: "font-family", AssistantBold;
+
+            font-size: 0.7vw;
+            border-bottom: 1px v.$blue solid;
+            button {
+                all: unset;
+                border: 1px v.$blue solid;
+                color: v.$white;
+                background-color: v.$blue;
+                cursor: pointer;
+                
+            }
+        }
+        .statusIcon {
+            height: 100%;
+            width: 100%;
+            padding: 0.5vw;
+            img{
+            width: 100%;
+            height: 100%;
+            }
+        }
+        .server {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            border: 1px v.$blue solid;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            font-family: v.$bold;
+            font-size: 0.7vw;
+            opacity: 0;
+            animation: rippleFade 1.5s 1 both;
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: #{$i * 0.15}s;
+        }
+      }
+            .server-status {
+                height: 50px;
+                width: 50px;
+                background-size: auto;
+            }
+        }
+
+    }
+}
+
+@keyframes rippleFade {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .sortby {
+    transform: scale(1.05);
+    background-color: #4e7a7b80;
+  }

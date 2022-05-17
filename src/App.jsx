@@ -5,9 +5,8 @@ import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Login from './components/Login';
 import Calendar from './components/Calendar';
+import Weather from './components/Weather';
 
-
-/* import Dashboard from './components/Dashboard'; */
 
 
 function App() {
@@ -49,6 +48,7 @@ function App() {
     <div className="App">
       <Header/>
       <Dashboard checksData={checksHandled}/>
+      <Weather/>
       {/* <Calendar/> */}
       {/* <Login/> */}
     </div>

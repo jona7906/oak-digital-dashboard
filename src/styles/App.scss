@@ -1,29 +1,48 @@
 @use "/src/styles/variables" as v;
 /* @import "~ag-grid-community/src/styles/ag-grid.scss";*/
+@import "ag-grid-community/src/styles/ag-grid.scss";
+@import "ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
 
- 
 .ag-theme-alpine {
+    @include ag-theme-alpine((
+        // use theme parameters where possible
+        alpine-active-color: deeppink,
+        // Colour of text and icons in primary UI elements like menus
+        foreground-color: black,
+        rag-green-outer: red
+        
+    ));
+    --ag-rag-green-outer: "red";
+    --ag-header-background-color: "";
+    --ag-odd-row-background-color: v.$white;   
+    .ag-header {
+        // or write CSS selectors to make customisations beyond what the parameters support
+       /*  font-style: italic; */
+    }
+}
+ 
+/* .ag-theme-alpine {
     --ag-foreground-color: black;
     --ag-header-background-color: yellow;
     --ag-header-background-color:white;
     --ag-odd-row-background-color: green;
     --ag-header-cell-moving-background-color: ag-derived(header-cell-hover-background-color);
-    --value-change-value-highlight-background-color: rgba(#16A085, 0.5),
+    --value-change-value-highlight-background-color: rgba(#16A085, 0.5), */
    /*  @include ag-theme-alpine((
         // use theme parameters where possible
         alpine-active-color: deeppink
     )); */
 
-    .ag-header {
+   /*  .ag-header { */
         // or write CSS selectors to make customisations beyond what the parameters support
        /*  font-style: italic;
         width: fit-content; */
         
 
-    }.ag-header-cell-label{
+/*     }.ag-header-cell-label{
 
     }
-}
+} */
 
 * {
     box-sizing: border-box;
@@ -62,10 +81,10 @@ body {
     }
 
     .dashboard-container {
+        margin: auto;
         width: 90vw;
         height: 60vw;
-        // display: flex;
-        // justify-content: center;
+
     }
     .ag-theme-alpine{
         width: 100%;
@@ -134,6 +153,12 @@ body {
         }
 
     }
+}
+
+.App {
+    /* text-align: center; */
+    display:block;
+margin: auto;
 }
 
 @keyframes rippleFade {

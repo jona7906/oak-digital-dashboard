@@ -37,12 +37,12 @@ setRowData(props.checksData)
     } */
       return <StatusIcon status={params.value}/>
                           } /* filter: true */},
-  {field: 'name', /* filter: true */},
-  {field: 'hostname', /* filter: true */},
-  {field: 'type'},
-  {field: 'lastresponsetime', cellRenderer: 'agAnimateShowChangeCellRenderer:'},
-  {field: 'resolution'},
-  {field: 'created',  cellRenderer: params => {
+  {headerName: "Name", field: 'name', /* filter: true */},
+  {headerName: "Host name", field: 'hostname', /* filter: true */},
+  {headerName: "Type",field: 'type'},
+  {headerName: "Responstime",field: 'lastresponsetime', cellRenderer: 'agAnimateShowChangeCellRenderer:'},
+  {headerName: "Resolution",field: 'resolution'},
+  {headerName: "Created",field: 'created',  cellRenderer: params => {
     return getDate(params.value)
                         }},
   
@@ -67,10 +67,10 @@ const gridOptions = {
 /*   rowStyle: { background: 'black' },
  */
    
-      rowClassRules: {
+    /*   rowClassRules: {
         // apply green to 2008
         'rag-green-outer': function(params) { return params.data.status === "down"; },
-      },
+      }, */
   // PROPERTIES
   // Objects like myRowData and myColDefs would be created in your application
   /* rowData: myRowData,
@@ -93,10 +93,15 @@ const cellClickedListener = useCallback( event => {
 }, []);
 
  function getDate(serverdata) {
-  const findDate = serverdata.created;
-  const timestamp = new Date(findDate);  
-  let theDate = `${timestamp.getHours()}:${timestamp.getMinutes()} - ${timestamp.getDate()}/${timestamp.getMonth()+1}/${timestamp.getYear()}`;
-  return theDate;
+   /* console.log(serverdata); */
+  const findDate = serverdata;
+  console.log(serverdata);
+  const timestamp = new Date(findDate*1000); 
+  /* console.log(timestamp); */ 
+  let theDate = new Intl.DateTimeFormat('da-DK', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp);
+  /*   timestamp.toLocaleDateString("en-US"); */
+  /* `${timestamp.getHours()}:${timestamp.getMinutes()} - ${timestamp.getDate()}/${timestamp.getMonth()+1}/${timestamp.getYear()}`;
+  */ return theDate;
 }
    
 /* api.refreshCells = (

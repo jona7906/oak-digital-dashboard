@@ -1,36 +1,46 @@
 import React, { useEffect, useState } from "react";
-
+import DisplayWeather from "./DisplayWeather"
 export default function Weather() {
 
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-      });
+  const fetchData = async () => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+    });
 
-      await fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=metric&appid=9fef0470f56e191928685ef0d4859eef`)
-      .then(res => res.json())
-      .then(result => {
-        setData(result)
-        // function getTemperature(){
-        //   let degree = result.main.temp;
-        //   return degree;
-        // }
-        let weatherDesc = result.weather[0];
-        console.log("Weather Description:", weatherDesc.main);
-      });
-    }
+    await fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=metric&appid=9fef0470f56e191928685ef0d4859eef`)
+    .then(res => res.json())
+    .then(result => {
+      setData(result)
+      console.log("Weather", result)
+    });
+  }
+  
+  useEffect(() => {   
     fetchData();
   }, [lat,long])
+
+  // function createBackground(allinfo){
+  //   let weather = allinfo.weather[0].main;
+  //   let formatWeather = weather.toLowerCase();
+  //   let video = `.../public/videos/${formatWeather}.mp4`
+  //   console.log(video);
+  //   return video;
+  // }
+
+  if(!data){
+    alert("NO DATA");
+  }
   
   return (
     <div className="Weather">
-      <div className="degrees"></div>
+      {/* {createBackground(data)} */}
+      <DisplayWeather weatherData={data}></DisplayWeather>
+      {/* { <h2 className="degrees">{}</h2> } */}
     </div>
   );
 }

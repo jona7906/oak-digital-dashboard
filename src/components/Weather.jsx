@@ -17,6 +17,7 @@ export default function Weather() {
     .then(result => {
       setData(result)
       console.log("Weather", result)
+      
     });
   }
   
